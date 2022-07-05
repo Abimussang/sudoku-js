@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styleMenu.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="mainBlock">
+      <h1>SUDOKU</h1>
+      <h2>Choose difficultie</h2>
+      <div class="DivForDifficalte">
+        <button class="easy">Easy</button>
+        <button class="medium">Medium</button>
+        <button class="hard">Hard</button>
+        <button class="expert">Expert</button>
+      </div>
+      <div class="ChooseNum">
+        <div class="easyDiv">
+          <button class="FromEasy" value="easy1">1</button>
+          <button class="FromEasy" value="easy2">2</button>
+          <button class="FromEasy" value="easy3">3</button>
+        </div>
+        <div class="mediumDiv">
+          <button class="FromMedium" value="medium1">1</button>
+          <button class="FromMedium" value="medium2">2</button>
+          <button class="FromMedium" value="medium3">3</button>
+        </div>
+        <div class="hardDiv">
+          <button class="FromHard" value="hard1">1</button>
+          <button class="FromHard" value="hard2">2</button>
+          <button class="FromHard" value="hard3">3</button>
+        </div>
+        <div class="expertDiv">
+          <button class="FromExpert" value="Expert1">1</button>
+          <button class="FromExpert" value="Expert2">2</button>
+          <button class="FromExpert" value="Expert3">3</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    
+    <div class="Sudoku">
+      <table>
+        <tr>
+          <td class="borderLeft borderTop column1">
+            <input type="text" name="" id="" class="cell1" />
+          </td>
+          <td class="borderTop column2">
+            <input type="text" name="" id="" class="cell1" />
+          </td>
+          <td class="borderTop borderRight column3">
+            <input type="text" name="" id="" class="cell1" />
+          </td>
+          <td class="borderLeft borderTop column4">
+            <input type="text" name="" id="" class="cell2" />
+          </td>
+          <td class="borderTop column5">
+            <input type="text" name="" id="" class="cell2" />
+          </td>
+          <td class="borderTop borderRight column6">
+            <input type="text" name="" id="" class="cell2" />
+          </td>
+          <td class="borderLeft borderTop column7">
+            <input type="text" name="" id="" class="cell3" />
+          </td>
+          <td class="borderTop column8">
+            <input type="text" name="" id="" class="cell3" />
+          </td>
+          <td class="borderTop borderRight column9">
+            <input type="text" name="" id="" class="cell3" />
+          </td>
+        </tr>
+        <tr>
+          <td class="borderLeft column1">
+            <input type="text" name="" id="" class="cell1" />
+          </td>
+          <td class="column2">
+            <input type="text" name="" id="" class="cell1" />
+          </td>
+          <td class="borderRight column3">
+            <input type="text" name="" id="" class="cell1" />
+          </td>
+          <td class="borderLeft column4">
+            <input type="text" name="" id="" class="cell2" />
+          </td>
+          <td class="column5">
+            <input type="text" name="" id="" class="cell2" />
+          </td>
+          <td class="borderRight column6">
+            <input type="text" name="" id="" class="cell2" />
+          </td>
+          <td class="borderLeft column7">
+            <input type="text" name="" id="" class="cell3" />
+          </td>
+          <td class="column8">
+            <input type="text" name="" id="" class="cell3" />
+          </td>
+          <td class="borderRight column9">
+            <input type="text" name="" id="" class="cell3" />
+          </td>
+        </tr>
+        <tr>
+          <td class="borderLeft borderBottom column1">
+            <input type="text" name="" id="" class="cell1" />
+          </td>
+          <td class="borderBottom column2">
+            <input type="text" name="" id="" class="cell1" />
+          </td>
+          <td class="borderRight borderBottom column3">
+            <input type="text" name="" id="" class="cell1" />
+          </td>
+          <td class="borderLeft borderBottom column4">
+            <input type="text" name="" id="" class="cell2" />
+          </td>
+          <td class="borderBottom column5">
+            <input type="text" name="" id="" class="cell2" />
+          </td>
+          <td class="borderRight borderBottom column6">
+            <input type="text" name="" id="" class="cell2" />
+          </td>
+          <td class="borderLeft borderBottom column7">
+            <input type="text" name="" id="" class="cell3" />
+          </td>
+          <td class="borderBottom column8">
+            <input type="text" name="" id="" class="cell3" />
+          </td>
+          <td class="borderRight borderBottom column9">
+            <input type="text" name="" id="" class="cell3" />
+          </td>
+        </tr>
+        <tr>
+          <td class="borderLeft borderTop column1">
+            <input type="text" name="" id="" class="cell4" />
+          </td>
+          <td class="borderTop column2">
+            <input type="text" name="" id="" class="cell4" />
+          </td>
+          <td class="borderTop borderRight column3">
+            <input type="text" name="" id="" class="cell4" />
+          </td>
+          <td class="borderLeft borderTop column4">
+            <input type="text" name="" id="" class="cell5" />
+          </td>
+          <td class="borderTop column5">
+            <input type="text" name="" id="" class="cell5" />
+          </td>
+          <td class="borderTop borderRight column6">
+            <input type="text" name="" id="" class="cell5" />
+          </td>
+          <td class="borderLeft borderTop column7">
+            <input type="text" name="" id="" class="cell6" />
+          </td>
+          <td class="borderTop column8">
+            <input type="text" name="" id="" class="cell6" />
+          </td>
+          <td class="borderTop borderRight column9">
+            <input type="text" name="" id="" class="cell6" />
+          </td>
+        </tr>
+        <tr>
+          <td class="borderLeft column1">
+            <input type="text" name="" id="" class="cell4" />
+          </td>
+          <td class="column2">
+            <input type="text" name="" id="" class="cell4" />
+          </td>
+          <td class="borderRight column3">
+            <input type="text" name="" id="" class="cell4" />
+          </td>
+          <td class="borderLeft column4">
+            <input type="text" name="" id="" class="cell5" />
+          </td>
+          <td class="column5">
+            <input type="text" name="" id="" class="cell5" />
+          </td>
+          <td class="borderRight column6">
+            <input type="text" name="" id="" class="cell5" />
+          </td>
+          <td class="borderLeft column7">
+            <input type="text" name="" id="" class="cell6" />
+          </td>
+          <td class="column8">
+            <input type="text" name="" id="" class="cell6" />
+          </td>
+          <td class="borderRight column9">
+            <input type="text" name="" id="" class="cell6" />
+          </td>
+        </tr>
+        <tr>
+          <td class="borderLeft borderBottom column1">
+            <input type="text" name="" id="" class="cell4" />
+          </td>
+          <td class="borderBottom column2">
+            <input type="text" name="" id="" class="cell4" />
+          </td>
+          <td class="borderRight borderBottom column3">
+            <input type="text" name="" id="" class="cell4" />
+          </td>
+          <td class="borderLeft borderBottom column4">
+            <input type="text" name="" id="" class="cell5" />
+          </td>
+          <td class="borderBottom column5">
+            <input type="text" name="" id="" class="cell5" />
+          </td>
+          <td class="borderRight borderBottom column6">
+            <input type="text" name="" id="" class="cell5" />
+          </td>
+          <td class="borderLeft borderBottom column7">
+            <input type="text" name="" id="" class="cell6" />
+          </td>
+          <td class="borderBottom column8">
+            <input type="text" name="" id="" class="cell6" />
+          </td>
+          <td class="borderRight borderBottom column9">
+            <input type="text" name="" id="" class="cell6" />
+          </td>
+        </tr>
+        <tr>
+          <td class="borderLeft borderTop column1">
+            <input type="text" name="" id="" class="cell7" />
+          </td>
+          <td class="borderTop column2">
+            <input type="text" name="" id="" class="cell7" />
+          </td>
+          <td class="borderTop borderRight column3">
+            <input type="text" name="" id="" class="cell7" />
+          </td>
+          <td class="borderLeft borderTop column4">
+            <input type="text" name="" id="" class="cell8" />
+          </td>
+          <td class="borderTop column5">
+            <input type="text" name="" id="" class="cell8" />
+          </td>
+          <td class="borderTop borderRight column6">
+            <input type="text" name="" id="" class="cell8" />
+          </td>
+          <td class="borderLeft borderTop column7">
+            <input type="text" name="" id="" class="cell9" />
+          </td>
+          <td class="borderTop column8">
+            <input type="text" name="" id="" class="cell9" />
+          </td>
+          <td class="borderTop borderRight column9">
+            <input type="text" name="" id="" class="cell9" />
+          </td>
+        </tr>
+        <tr>
+          <td class="borderLeft column1">
+            <input type="text" name="" id="" class="cell7" />
+          </td>
+          <td class="column2">
+            <input type="text" name="" id="" class="cell7" />
+          </td>
+          <td class="borderRight column3">
+            <input type="text" name="" id="" class="cell7" />
+          </td>
+          <td class="borderLeft column4">
+            <input type="text" name="" id="" class="cell8" />
+          </td>
+          <td class="column5">
+            <input type="text" name="" id="" class="cell8" />
+          </td>
+          <td class="borderRight column6">
+            <input type="text" name="" id="" class="cell8" />
+          </td>
+          <td class="borderLeft column7">
+            <input type="text" name="" id="" class="cell9" />
+          </td>
+          <td class="column8">
+            <input type="text" name="" id="" class="cell9" />
+          </td>
+          <td class="borderRight column9">
+            <input type="text" name="" id="" class="cell9" />
+          </td>
+        </tr>
+        <tr>
+          <td class="borderLeft borderBottom column1">
+            <input type="text" name="" id="" class="cell7" />
+          </td>
+          <td class="borderBottom column2">
+            <input type="text" name="" id="" class="cell7" />
+          </td>
+          <td class="borderRight borderBottom column3">
+            <input type="text" name="" id="" class="cell7" />
+          </td>
+          <td class="borderLeft borderBottom column4">
+            <input type="text" name="" id="" class="cell8" />
+          </td>
+          <td class="borderBottom column5">
+            <input type="text" name="" id="" class="cell8" />
+          </td>
+          <td class="borderRight borderBottom column6">
+            <input type="text" name="" id="" class="cell8" />
+          </td>
+          <td class="borderLeft borderBottom column7">
+            <input type="text" name="" id="" class="cell9" />
+          </td>
+          <td class="borderBottom column8">
+            <input type="text" name="" id="" class="cell9" />
+          </td>
+          <td class="borderRight borderBottom column9">
+            <input type="text" name="" id="" class="cell9" />
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class = "endGame">
+      <div class = "positionEndGame">
+
+      </div>
+    </div>
+
+    <script type="module" src="menu.js"></script>
+  </body>
+</html>

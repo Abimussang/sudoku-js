@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.mainBlock{
+    width: 100%;
+    position: absolute;
+}
+
+h1,h2{
+    text-align: center;
+}
+
+h1{
+    font-size: 15ex;
+}
+
+h2{
+    font-size: 5ex;
+}
+
+.DivForDifficalte{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.DivForDifficalte>button{
+    font-size: 2ex;
+}
+
+.ChooseNum{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    /*position: relative;*/
+}
+
+.easy,
+.medium,
+.hard,
+.expert{
+    /*align-items: center;*/
+    /*align-self: center;*/
+    /*flex: 1;*/
+    width: 20%;
+}
+
+.easyDiv,
+.mediumDiv,
+.hardDiv,
+.expertDiv{
+    position: absolute;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.easyDiv{
+    z-index: 1;
+}
+
+.easy{
+    background-color: lightblue;
+}
+
+.medium{
+    background-color: green;
+}
+
+.hard{
+    background-color: yellow;
+}
+
+.expert{
+    background-color: red;
+}
+
+
+.FromEasy{
+    background-color: lightblue;
+
+}
+
+.FromMedium{
+    background-color: green;
+
+}
+
+.FromHard{
+    background-color: yellow;
+
+}
+
+.FromExpert{
+    background-color: red;
+}
+
+.easyDiv>,
+.mediumDiv>,
+.hardDiv>,
+.expertDiv>{
+    width: 25%;
+}
+
+/*a{
+    width: 25%;
+}
+
+a>button{
+    width: 100%;
+}*/
+
+td{
+    max-width: 50px;
+    height: 50px;
+    border: solid 1px ;
+}
+
+.borderLeft{
+    border-left: solid 4px;
+}
+
+.borderTop{
+    border-top: solid 4px;
+}
+
+.borderRight{
+    border-right: solid 4px;
+}
+
+.borderBottom{
+    border-bottom: solid 4px;
+}
+
+table{
+    border-collapse: collapse;
+    align-self: center;
+    margin-top: 10%;
+}
+
+tr:hover{
+    background-color: rgba(173,216,230,0.5);
+}
+
+input:hover{background-color: lightblue;}
+
+/*.column1:hover + .column1,
+.column2:hover + .column2,
+.column3:hover + .column3,
+.column4:hover + .column4,
+.column5:hover + .column5,
+.column6:hover + .column6,
+.column7:hover + .column7,
+.column8:hover + .column8,
+.column9:hover + .column9{
+    background-color: coral;
+}*/
+
+/*.column1:hover{
+    .column1{
+        background-color: coral;
+   }
+}*/
+
+input{
+    color: black;
+    max-width: 50px;
+    height: 50px;
+    border: 0px;
+    text-align: center;
+    background-color: rgba(117, 190, 218, 0.0);
+    font-size: 2em;
+}
+
+.Sudoku{
+    width: 100%;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.endGame{
+    display: none;
+    height: 100vh;
+    width: 50%;
+    align-items: center;
+    margin-left: 20%;
+}
+
+.positionEndGame{
+    position: absolute;
+    background-color: lightcoral;
+    z-index: 4;
+    width: 60%;
+    height: 50%;
+    /*text-align: center;
+    font-size: 3em;*/
+    border: 10px black solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.positionEndGame > p{
+    text-align: center;
+    font-size: 3em;
+}
