@@ -1,8 +1,10 @@
 import { sudokuObject } from "./script/data/data.js";
-import {startSudoku} from "./script/controler/renderSudoku.js";
+import {startSudoku, startEmptySudoku} from "./script/controler/renderSudoku.js";
 
 window.addEventListener("load", loadOfWindow);
 function loadOfWindow() {
+  let buttonForEmpty = document.querySelector(".divForEmpty > button");
+  buttonForEmpty.addEventListener("click", startEmptySudoku);
   let buttonForDifficalte = document.querySelectorAll(
     ".DivForDifficalte > button"
   );
@@ -15,7 +17,6 @@ function loadOfWindow() {
   }
   let tempChooseNum = document.querySelectorAll(".ChooseNum > div > button");
   for (let i = 0; i < tempChooseNum.length; i++) {
-    console.log(tempChooseNum[i]);
     tempChooseNum[i].addEventListener("click", {
       handleEvent: ChooseSudoku,
       nameClass: tempChooseNum[i].value,
@@ -24,7 +25,6 @@ function loadOfWindow() {
 }
 
 function ChangeIndex() {
-  console.log(this.nameClass);
   let tempChooseNum = document.querySelectorAll(".ChooseNum > div");
   for (let j = 0; j < tempChooseNum.length; j++) {
     tempChooseNum[j].style.zIndex = 0;
@@ -33,7 +33,6 @@ function ChangeIndex() {
 }
 
 function ChooseSudoku() {
-  console.log(this.nameClass);
   let key = this.nameClass;
   let keyAnswer =
     this.nameClass.slice(0, this.nameClass.length - 1) +

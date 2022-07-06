@@ -27,24 +27,16 @@ h2{
     flex-wrap: nowrap;
 }
 
-.DivForDifficalte>button{
-    font-size: 2ex;
-}
-
 .ChooseNum{
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    /*position: relative;*/
 }
 
 .easy,
 .medium,
 .hard,
 .expert{
-    /*align-items: center;*/
-    /*align-self: center;*/
-    /*flex: 1;*/
     width: 20%;
 }
 
@@ -100,11 +92,11 @@ h2{
     background-color: red;
 }
 
-.easyDiv>,
-.mediumDiv>,
-.hardDiv>,
-.expertDiv>{
-    width: 25%;
+.easyDiv>*,
+.mediumDiv>*,
+.hardDiv>*,
+.expertDiv>*{
+    width: 20%;
 }
 
 /*a{
@@ -149,24 +141,6 @@ tr:hover{
 
 input:hover{background-color: lightblue;}
 
-/*.column1:hover + .column1,
-.column2:hover + .column2,
-.column3:hover + .column3,
-.column4:hover + .column4,
-.column5:hover + .column5,
-.column6:hover + .column6,
-.column7:hover + .column7,
-.column8:hover + .column8,
-.column9:hover + .column9{
-    background-color: coral;
-}*/
-
-/*.column1:hover{
-    .column1{
-        background-color: coral;
-   }
-}*/
-
 input{
     color: black;
     max-width: 50px;
@@ -199,8 +173,6 @@ input{
     z-index: 4;
     width: 60%;
     height: 50%;
-    /*text-align: center;
-    font-size: 3em;*/
     border: 10px black solid;
     display: flex;
     flex-direction: column;
@@ -210,4 +182,25 @@ input{
 .positionEndGame > p{
     text-align: center;
     font-size: 3em;
+}
+
+.goToMenu{
+    display: flex;
+    align-self: center;
+    width: min-content;
+}
+
+button{
+    font-size: 1.1em;
+}
+
+.divForEmpty{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.divForEmpty > button{
+    width: 50%;
+    background-color: orchid;
 }

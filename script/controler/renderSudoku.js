@@ -34,6 +34,27 @@ export function startSudoku(sudokuArr, sudokuAnswerArr) {
   }
 }
 
+export function startEmptySudoku() {
+  console.log("start");
+  document.querySelector(".mainBlock").style.display = "none";
+  document.querySelector(".Sudoku").style.display = "flex";
+  let temp = 0;
+  let inputForChange = document.querySelectorAll("input");
+  let tdFromTable = document.querySelectorAll("td");
+  for (let i = 0; i < 9; i++) {
+    for (let j = 0; j < 9; j++) {
+      tdFromTable[temp].addEventListener("mouseover", mouseoverInput);
+      tdFromTable[temp].addEventListener("mouseout", mouseoutInput);
+      inputForChange[temp].value = "";
+      inputForChange[temp].addEventListener("keyup", {
+        handleEvent: changeInputEmpty,
+        temp: temp,
+      });
+      temp++;
+    }
+  }
+}
+
 function mouseoverInput() {
   hoverInput("rgba(173,216,230,0.5)", this);
 }
@@ -49,6 +70,26 @@ function hoverInput(color, tdTemp) {
   }
 }
 
+function changeInputEmpty(temp) {
+  let inputForChange = document.querySelectorAll("input");
+  let tempCheck = false;
+  let valueOfCell = inputForChange[this.temp].value;
+  for (let i = 1; i <= 9; i++) {
+    if (valueOfCell == i) {
+      tempCheck = true;
+    }
+  }
+  if (!tempCheck) {
+    endSudoku(false);
+  } else {
+    inputForChange[this.temp].disabled = true;
+    comleteSudoku++;
+  }
+  if (comleteSudoku == 81) {
+    validatorSudoku();
+  }
+}
+
 function changeInput(temp, sudokuAnswer) {
   let inputForChange = document.querySelectorAll("input");
   let valueOfCell = inputForChange[this.temp].value;
@@ -56,7 +97,6 @@ function changeInput(temp, sudokuAnswer) {
   if (valueOfCell != this.sudokuAnswer) {
     endSudoku(false);
   } else {
-    //log(comleteSudoku);
     inputForChange[this.temp].disabled = true;
     let arrOfCell = document.querySelectorAll(
       ".cell" + inputForChange[this.temp].className[4]
@@ -68,55 +108,6 @@ function changeInput(temp, sudokuAnswer) {
     }
   }
 }
-
-/*export function loadOfWindow() {
-  let buttonForDifficalte = document.querySelectorAll(
-    ".DivForDifficalte > button"
-  );
-  for (let i = 0; i < buttonForDifficalte.length; i++) {
-    let NameClass = buttonForDifficalte[i].className;
-    buttonForDifficalte[i].addEventListener("click", {
-      handleEvent: ChangeIndex,
-      nameClass: NameClass,
-    });
-    //document.querySelector("."+NameClass+"Div").addEventListener("click", {handleEvent: ChangeIndex, nameClass: NameClass});
-  }
-  let tempChooseNum = document.querySelectorAll(".ChooseNum > div > button");
-  for (let i = 0; i < tempChooseNum.length; i++) {
-    console.log(tempChooseNum[i]);
-    tempChooseNum[i].addEventListener("click", {
-      handleEvent: ChooseSudoku,
-      nameClass: tempChooseNum[i].value,
-    });
-  }
-  //document.querySelector(".easyDiv").addEventListener("click", {handleEvent: ChangeIndex, nameClass: });
-}*/
-
-/*function ChangeIndex() {
-  //document.querySelector(".easyDiv").style
-  console.log(this.nameClass);
-  let tempChooseNum = document.querySelectorAll(".ChooseNum > div");
-  for (let j = 0; j < tempChooseNum.length; j++) {
-    tempChooseNum[j].style.zIndex = 0;
-  }
-  document.querySelector("." + this.nameClass + "Div").style.zIndex = "1";
-}
-
-function ChooseSudoku() {
-  console.log(this.nameClass);
-  //console.log("data ", sudokuObject[this.nameClass]);
-  let key = this.nameClass;
-  let keyAnswer =
-    this.nameClass.slice(0, this.nameClass.length - 1) +
-    "Answer" +
-    this.nameClass[this.nameClass.length - 1];
-  //console.log(sudokuObject[key]);
-  startSudoku(sudokuObject[key], sudokuObject[keyAnswer]);
-  //console.log(sudokuObject[keyAnswer]);
-  //console.log(keyAnswer);
-  //Classname = this.nameClass;
-  //ChoosedSudoku;
-}*/
 
 function ChangeFontColorCell(arrOfCell) {
   let countCompleteCell = 0;
@@ -146,8 +137,73 @@ function endSudoku(gameResult) {
   let endGame = document.querySelector(".endGame");
   endGame.style.display = "flex";
   if (gameResult == true) {
-    endGame.children[0].innerHTML = "<p>You win</p>";
+    endGame.children[0].innerHTML = `<p>You win</p><button class = "goToMenu">Menu</button>`;
   } else {
-    endGame.children[0].innerHTML = "<p>You Lose</p>";
+    endGame.children[0].innerHTML = `<p>You Lose</p><button class = "goToMenu">Menu</button>`;
   }
+  document.querySelector(".goToMenu").addEventListener("click", reLoad);
+}
+
+function compareNumeric(a, b) {
+  if (a > b) return 1;
+  if (a == b) return 0;
+  if (a < b) return -1;
+}
+
+function validatorSudoku() {
+  let inputForChange = document.querySelectorAll("input");
+  let tempLose = false;
+  let ArrSudoku = [];
+  let ArrTemp = [];
+  let temp = 0;
+  for (let i = 0; i < 9; i++) {
+    ArrSudoku[i] = [];
+    for (let j = 0; j < 9; j++) {
+      ArrSudoku[i][j] = inputForChange[temp].value;
+      temp++;
+    }
+  }
+  for (let i = 0; i < 9; i++) {
+    ArrTemp = [];
+    for (let j = 0; j < 9; j++) {
+      ArrTemp.push(ArrSudoku[i][j]);
+    }
+    ArrTemp.sort(compareNumeric);
+    for (let j = 0; j < 9; j++) {
+      if (ArrTemp[j] !== j) {
+        tempLose = true;
+      }
+    }
+  }
+  let tempForI = 0;
+  let tempForJ = 0;
+  for (let k = 0; k < 9; k++) {
+    ArrTemp = [];
+    for (let i = tempForI; i < tempForI + 3; i++) {
+      for (let j = tempForJ; j < tempForJ + 3; j++) {
+        ArrTemp.push(ArrSudoku[j][i]);
+      }
+    }
+    tempForI += 3;
+    if ((k + 1) % 3 == 0) {
+      tempForJ += 3;
+      tempForI = 0;
+    }
+    ArrTemp.sort(compareNumeric);
+    for (let j = 0; j < 9; j++) {
+      if (ArrTemp[j] !== j) {
+        tempLose = true;
+      }
+    }
+  }
+  if (tempLose == true) {
+    endSudoku(false);
+  }
+  else{
+    endSudoku(true);
+  }
+}
+
+function reLoad() {
+  window.location.reload();
 }
